@@ -3,6 +3,7 @@
 #include<fstream>//has the capabiltites of both ofstream and if stream
 #include<vector>
 #include<windows.h>
+#include<ostream>
 using namespace std;
 //functions 
 //1/ Function for menu 
