@@ -227,6 +227,7 @@ void start(){
 				int option_input1;
 				//reads the txt and inputs to to the struct	
 				input_questions(questions_answer);
+				show_sign();
 				cout<<"               Menu   "<<"\n";
 				TextTable t( '-', '|', '|' );
 				t.add("0. To Do List Mode");
