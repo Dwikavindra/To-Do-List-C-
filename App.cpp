@@ -258,7 +258,7 @@ void start(){
 						cout<<"Enter 3 to go back to menu"<<"\n";
 						cout<<"Enter Your Question Here (Press Enter to Input): ";
 						getline(cin,inputstring1);
-						if (inputstring=="3"){
+						if (inputstring1=="3"){
 				 			system("cls");
 				 			break; 
 							}
@@ -300,7 +300,7 @@ void start(){
 					 cout<<i+1<<"  "<<questions_answer[i].question<<"\t"<<"                          "<<questions_answer[i].answer<<"\n";
 				}
 				cout<<"Type 3 to go back or Type 1 to continue :";
-				cin>>inputstring;
+				cin>>inputstring1;
 				if(inputstring1=="3"){
 					system("cls");
 					break;
