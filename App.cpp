@@ -221,6 +221,7 @@ void start(){
 			case 0:
 				{
 				system("cls");
+				show_sign();
 				int h=0;
 				while (h==0){
 				string inputstring1;
