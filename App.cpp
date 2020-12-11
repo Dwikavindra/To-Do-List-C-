@@ -9,6 +9,7 @@
 #define TEXTTABLE_ENCODE_MULTIBYTE_STRINGS
 #define TEXTTABLE_USE_EN_US_UTF8
 #include "TextTable.h"
+#include <iomanip>
 using namespace std;
 struct questions{
 	string question;
@@ -276,9 +277,9 @@ void start(){
 						system("cls");
 						cout<<"\n";
 						cout<<"------------"<<"\n";
-					cout<<"No \tQuestions\tAnswer"<<"\n";
+				cout<<"No"<<"         "<<"Question"<<"                                               "<<"___________Answer___________"<<"\n";
 					for (int i=0;i<questions_answer.size();i++){//view questions and answer 
-					 cout<<i+1<<"\t"<<questions_answer[i].question<<setw(10)<<"\t"<<questions_answer[i].answer<<"\n";
+					 cout<<i+1<<"         "<<questions_answer[i].question<<"                                           "<<std::right<<questions_answer[i].answer<<"\n";
 				}
 				cout<<"Type 3 to go back: ";
 				getline(cin,inputstring1);
@@ -295,9 +296,9 @@ void start(){
 				cout<<"\n";
 				cout<<questions_answer.size()<<"\n";
 				cout<<"------------"<<"\n";
-				cout<<"No \tQuestions\tAnswer"<<"\n";
+				cout<<"No"<<"         "<<"Question"<<"                                               "<<"___________Answer___________"<<"\n";
 					for (int i=0;i<questions_answer.size();i++){//view questions and answer 
-					 cout<<i+1<<"\t"<<questions_answer[i].question<<setw(10)<<"\t"<<questions_answer[i].answer<<"\n";
+					 cout<<i+1<<"         "<<questions_answer[i].question<<"                                           "<<std::right<<questions_answer[i].answer<<"\n";
 				}
 				cout<<"Type 3 to go back or Type 1 to continue :";
 				cin>>inputstring1;
@@ -342,7 +343,7 @@ void start(){
 		  						int i = rand() % questions_answer.size();
 		  						cout<<"Type 3 to go back Type 1 to continue: ";
 		  						getline(cin,inputstring1);
-		  						if(inputstring=="3"){
+		  						if(inputstring1=="3"){
 		  							system("cls");
 		  							break;
 								  }
