@@ -81,7 +81,7 @@ void delete_section(int n,vector<questions>&contents){
 	myfile2.open("Answers.txt",ios::trunc);
 	if(myfile.is_open()){
 		for(int i=0;i<contents.size();i++){
-			myfile<<"\n"<<contents[i].answer;
+			myfile2<<"\n"<<contents[i].answer;
 		} 
 	}
 	
@@ -192,13 +192,13 @@ cout<<"        Menu   "<<"\n";
 }
 
 void start(){
-	show_sign();
 	int c=0;
 	vector<string>taskslist;	
 	vector<questions> questions_answer;
 	while (c==0){
 		string inputstring;
 		int option_input;
+		show_sign();
 		TextTable t( '-', '|', '|' );
 		cout<<"        Menu   "<<"\n";
 		t.add("0. Flash Card Mode");
@@ -221,7 +221,6 @@ void start(){
 			case 0:
 				{
 				system("cls");
-				show_sign();
 				int h=0;
 				while (h==0){
 				string inputstring1;
@@ -277,9 +276,9 @@ void start(){
 						system("cls");
 						cout<<"\n";
 						cout<<"------------"<<"\n";
-					cout<<"No "<<"Question"<<"\t"<<"                          "<<"Answer"<<"\n";
+					cout<<"No \tQuestions\tAnswer"<<"\n";
 					for (int i=0;i<questions_answer.size();i++){//view questions and answer 
-					 cout<<i+1<<"  "<<questions_answer[i].question<<"\t"<<"                          "<<questions_answer[i].answer<<"\n";
+					 cout<<i+1<<"\t"<<questions_answer[i].question<<setw(10)<<"\t"<<questions_answer[i].answer<<"\n";
 				}
 				cout<<"Type 3 to go back: ";
 				getline(cin,inputstring1);
@@ -296,9 +295,9 @@ void start(){
 				cout<<"\n";
 				cout<<questions_answer.size()<<"\n";
 				cout<<"------------"<<"\n";
-				cout<<"No "<<"Question"<<"\t"<<"                          "<<"Answer"<<"\n";
-				for (int i=0;i<questions_answer.size();i++){//view questions and answer 
-					 cout<<i+1<<"  "<<questions_answer[i].question<<"\t"<<"                          "<<questions_answer[i].answer<<"\n";
+				cout<<"No \tQuestions\tAnswer"<<"\n";
+					for (int i=0;i<questions_answer.size();i++){//view questions and answer 
+					 cout<<i+1<<"\t"<<questions_answer[i].question<<setw(10)<<"\t"<<questions_answer[i].answer<<"\n";
 				}
 				cout<<"Type 3 to go back or Type 1 to continue :";
 				cin>>inputstring1;
@@ -308,7 +307,7 @@ void start(){
 				}
 				cout<<"Choose the coloumn: ";
 				cin>>y;
-				if(y<0 || y>questions_answer.size()-2){
+				if(y<0 ||(y>questions_answer.size()&&questions_answer.size()>1)){
 					cout<<"Please enter the correct section that is available"; 
 					continue;
 				}
